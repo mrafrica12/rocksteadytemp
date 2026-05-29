@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Rock Steady Admin</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="../../assets/images/logo/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+</head>
+<body>
+<div class="admin-shell">
+
+  <!-- Topbar -->
+  <header class="admin-topbar">
+    <div class="admin-topbar-brand">
+      <img src="../../assets/images/logo/logo.png" width="1254" height="1254" alt="Rock Steady">
+      Rock Steady <span>Admin</span>
+    </div>
+    <div class="admin-topbar-actions">
+      <div class="admin-topbar-icon" title="Notifications">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        <span class="notif-badge">4</span>
+      </div>
+      <a href="../../index.html" class="admin-topbar-icon" title="View Site" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+      <div class="admin-avatar" title="Staff Account">RS</div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Operations</div>
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a></li>
+        <li><a href="reservations.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reservations <span class="nav-count">24</span>
+        </a></li>
+        <li><a href="events.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19V6l12-3v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          Events
+        </a></li>
+        <li><a href="members.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          VIP Members <span class="nav-count">312</span>
+        </a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Marketing</div>
+      <ul class="sidebar-nav">
+        <li><a href="crm.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          Customer CRM
+        </a></li>
+        <li><a href="campaigns.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.17 9.1a19.79 19.79 0 01-3-8.56A2 2 0 012.1 2.5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.71a16 16 0 006.29 6.29l1.58-1.58a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Campaigns
+        </a></li>
+        <li><a href="analytics.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Analytics
+        </a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Content</div>
+      <ul class="sidebar-nav">
+        <li><a href="menu.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          Menu
+        </a></li>
+        <li><a href="gallery.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Gallery
+        </a></li>
+        <li><a href="staff.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          Staff &amp; Alerts
+        </a></li>
+      </ul>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="../../index.html" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Website
+      </a>
+      <a href="index.html" class="logout" data-logout>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Sign Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-content">
+    <div class="admin-page-header">
+      <div class="admin-page-title">
+        <h2>Dashboard</h2>
+        <p>Rock Steady ATL — Hospitality Command Center</p>
+        <div id="last-synced" style="font-size:.7rem; color:var(--soft); margin-top:2px;"></div>
+      </div>
+      <div class="admin-page-actions">
+        <span id="connection-status" class="admin-live-indicator cs-loading"><span class="cs-dot">⟳</span> Connecting…</span>
+        <button id="btn-refresh" class="btn btn-ghost btn-sm">Refresh Data</button>
+        <a href="reservations.html" class="btn btn-ghost btn-sm">View Reservations</a>
+        <button class="btn btn-gold btn-sm" onclick="adminToast('info','Notifications','All staff have been notified.')">Notify Staff</button>
+      </div>
+    </div>
+
+    <!-- Tonight's Event Banner -->
+    <div class="tonight-banner">
+      <div class="tonight-banner-left">
+        <div class="tonight-event-dot"></div>
+        <div>
+          <div class="tonight-banner-label">Tonight's Event</div>
+          <div class="tonight-banner-title">Afrobeats Takeover — Friday, June 6</div>
+          <div class="tonight-banner-meta">DJ Smooth + DJ Kush · 9:00 PM – 3:00 AM · Dress Code Enforced</div>
+        </div>
+      </div>
+      <div class="tonight-banner-stats">
+        <div class="tonight-stat"><span class="num">156</span><span class="lbl">RSVPs</span></div>
+        <div class="tonight-stat"><span class="num">180</span><span class="lbl">Capacity</span></div>
+        <div class="tonight-stat"><span class="num">87%</span><span class="lbl">Full</span></div>
+        <div class="tonight-stat"><span class="num">8</span><span class="lbl">Staff On</span></div>
+      </div>
+      <div style="display:flex; gap:8px; flex-shrink:0; flex-wrap:wrap;">
+        <button class="btn btn-ghost btn-sm" onclick="adminToast('success','Sent','Staff shift reminder sent via email.')">Remind Staff</button>
+        <a href="events.html" class="btn btn-gold btn-sm">Manage Event</a>
+      </div>
+    </div>
+
+    <!-- Operational Alert Cards — populated by loadDashboard() -->
+    <div id="alert-cards"></div>
+
+    <!-- KPI Grid -->
+    <div class="kpi-grid" id="kpi-grid"></div>
+
+    <!-- Row: Activity + Events Chart -->
+    <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:16px; margin-bottom:16px;">
+
+      <!-- Recent Activity -->
+      <div class="admin-table-card">
+        <div class="admin-table-header">
+          <div class="admin-table-title">Live Activity Feed</div>
+          <a href="reservations.html" style="font-size:.78rem; color:var(--gold);">All Bookings →</a>
+        </div>
+        <div style="padding:0 20px;" id="activity-feed" class="activity-feed"></div>
+      </div>
+
+      <!-- Top Events by RSVP + Capacity -->
+      <div class="admin-table-card">
+        <div class="admin-table-header">
+          <div class="admin-table-title">Event Capacity &amp; RSVPs</div>
+          <a href="analytics.html" style="font-size:.78rem; color:var(--gold);">Full Report →</a>
+        </div>
+        <div style="padding:20px; display:flex; flex-direction:column; gap:16px;">
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:.8rem; margin-bottom:8px;"><span style="color:var(--ink); font-weight:500;">Afrobeats Takeover <span style="color:var(--soft); font-size:.72rem;">Jun 6</span></span><span style="color:var(--gold); font-weight:700;">156/180</span></div>
+            <div class="capacity-bar-wrap"><div class="capacity-bar-track"><div class="capacity-bar-fill warning" style="width:87%"></div></div><span class="capacity-pct" style="color:var(--gold);">87%</span></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:.8rem; margin-bottom:8px;"><span style="color:var(--ink); font-weight:500;">Birthday Bash <span style="color:var(--soft); font-size:.72rem;">Jun 20</span></span><span style="color:#f87171; font-weight:700;">198/200</span></div>
+            <div class="capacity-bar-wrap"><div class="capacity-bar-track"><div class="capacity-bar-fill danger" style="width:99%"></div></div><span class="capacity-pct" style="color:#f87171;">99%</span></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:.8rem; margin-bottom:8px;"><span style="color:var(--ink); font-weight:500;">Amapiano Friday <span style="color:var(--soft); font-size:.72rem;">Jun 13</span></span><span style="color:var(--muted); font-weight:700;">112/180</span></div>
+            <div class="capacity-bar-wrap"><div class="capacity-bar-track"><div class="capacity-bar-fill" style="width:62%"></div></div><span class="capacity-pct">62%</span></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:.8rem; margin-bottom:8px;"><span style="color:var(--ink); font-weight:500;">Riddim Sundays <span style="color:var(--soft); font-size:.72rem;">Jun 7</span></span><span style="color:var(--muted); font-weight:700;">88/120</span></div>
+            <div class="capacity-bar-wrap"><div class="capacity-bar-track"><div class="capacity-bar-fill" style="width:73%"></div></div><span class="capacity-pct">73%</span></div>
+          </div>
+          <div id="events-bar-chart" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row: Weekly Chart + Traffic + Quick Actions -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+
+      <!-- Weekly Reservations -->
+      <div class="admin-table-card" style="padding:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div class="admin-table-title">Weekly Reservations</div>
+          <span style="font-size:.75rem; color:#4ade90; font-weight:700;">↑ 23%</span>
+        </div>
+        <div id="mini-week-chart"></div>
+        <div style="display:flex; justify-content:space-between; margin-top:8px; font-size:.7rem; color:var(--soft);">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+        <div id="week-summary" style="margin-top:16px; padding-top:14px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted);"></div>
+      </div>
+
+      <!-- Traffic Sources -->
+      <div class="admin-table-card" style="padding:20px;">
+        <div class="admin-table-title" style="margin-bottom:16px;">Traffic &amp; Bookings Source</div>
+        <div style="display:flex; flex-direction:column; gap:12px;" id="traffic-legend"></div>
+        <div style="margin-top:16px; padding-top:14px; border-top:1px solid var(--line);">
+          <div style="font-size:.72rem; color:var(--soft); margin-bottom:6px; letter-spacing:.08em; text-transform:uppercase; font-weight:700;">Google Rating</div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.6rem; font-weight:700; color:var(--gold-2);">4.9</span>
+            <span style="font-size:.72rem; color:var(--muted);">★★★★★<br><span style="color:var(--soft);">847 reviews</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="admin-table-card" style="padding:20px; display:flex; flex-direction:column; gap:10px;">
+        <div class="admin-table-title" style="margin-bottom:4px;">Quick Actions</div>
+        <div class="quick-actions-grid">
+          <a href="events.html" class="quick-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Event
+          </a>
+          <a href="members.html" class="quick-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            VIP Members
+          </a>
+          <a href="campaigns.html" class="quick-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Campaign
+          </a>
+          <button class="quick-action-btn" onclick="adminToast('success','Email blast sent','Event reminders queued.')">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Email Blast
+          </button>
+          <a href="crm.html" class="quick-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
+            CRM
+          </a>
+          <a href="analytics.html" class="quick-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Analytics
+          </a>
+        </div>
+        <a href="reservations.html" class="btn btn-gold btn-sm" style="justify-content:center; margin-top:8px;">View Today's Reservations →</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../../assets/js/admin.js"></script>
+</body>
+</html>
