@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Rock Steady ATL | Atlanta Nightclub & Restaurant</title>
+  <meta name="description" content="Contact Rock Steady ATL in Atlanta, GA — reservations, private events, media & partnerships. Find our address, hours, phone, and email information.">
+  <meta name="theme-color" content="#040302">
+  <meta name="google-apps-script-endpoint" content="">
+  <link rel="icon" href="../assets/images/logo/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .contact-layout { display: grid; grid-template-columns: 1fr 480px; gap: 64px; align-items: flex-start; }
+    .contact-channels { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+    .contact-channel {
+      display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+      background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      text-decoration: none; transition: all var(--dur-fast) var(--ease);
+    }
+    .contact-channel:hover { border-color: rgba(200,150,42,.35); transform: translateX(4px); }
+    .contact-channel-icon {
+      width: 44px; height: 44px; border-radius: var(--radius); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-channel-icon.gold { background: var(--gold-dim); color: var(--gold); }
+    .contact-channel-icon.green { background: rgba(37,211,102,.12); color: #25d366; }
+    .contact-channel-icon.blue { background: rgba(59,130,246,.1); color: #60a5fa; }
+    .contact-channel-icon svg { width: 20px; height: 20px; }
+    .contact-channel-text strong { display: block; font-size: .9rem; color: var(--ink); margin-bottom: 2px; }
+    .contact-channel-text span { font-size: .8rem; color: var(--soft); }
+    .map-placeholder {
+      width: 100%; aspect-ratio: 16/10; background: var(--panel); border: 1px solid var(--line);
+      border-radius: var(--radius-lg); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+      color: var(--soft); font-size: .85rem; overflow: hidden;
+    }
+    .map-placeholder svg { width: 32px; height: 32px; color: var(--gold); }
+    @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } }
+  </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:site_name" content="Rock Steady ATL">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Rock Steady ATL | Atlanta Nightclub & Restaurant">
+  <meta property="og:description" content="Contact Rock Steady ATL in Atlanta, GA — reservations, private events, media & partnerships. Find our address, hours, phone, and email information.">
+  <meta property="og:url" content="https://rocksteadyatl.com/pages/contact.html">
+  <meta property="og:image" content="https://rocksteadyatl.com/assets/images/rocksteady_04.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- SEO: Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@rocksteadyatl">
+  <meta name="twitter:title" content="Contact Rock Steady ATL | Atlanta Nightclub & Restaurant">
+  <meta name="twitter:description" content="Contact Rock Steady ATL in Atlanta, GA — reservations, private events, media & partnerships. Find our address, hours, phone, and email information.">
+  <meta name="twitter:image" content="https://rocksteadyatl.com/assets/images/rocksteady_04.webp">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://rocksteadyatl.com/pages/contact.html">
+  <!-- Schema.org: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rocksteadyatl.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://rocksteadyatl.com/pages/contact.html"}]}
+  </script>
+  <link rel="preload" as="image" href="../assets/images/rocksteady_04.webp">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="nav-brand">
+    <img src="../assets/images/logo/logo.png" width="1254" height="1254" alt="Rock Steady Logo" class="nav-logo">
+    <div class="nav-brand-name">Rock Steady<span>Atlanta</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="vip.html">VIP</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-cta"><a href="reservations.html" class="btn btn-gold btn-sm">Reserve a Table</a></div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="mobile-navigation" class="nav-mobile-overlay">
+  <a href="../index.html">Home</a><a href="events.html">Events</a><a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="vip.html">VIP</a>
+  <a href="contact.html">Contact</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="reservations.html" class="btn btn-gold">Reserve a Table</a>
+</div>
+
+<!-- Cinematic Hero -->
+<section class="immersive-divider" style="background-image: url('../assets/images/rocksteady_04.webp'); min-height: 360px;">
+  <div class="immersive-divider-content">
+    <div class="overline" style="justify-content:center;">Get in Touch</div>
+    <h1 style="font-size: clamp(2.2rem,5vw,3.8rem); margin-bottom: 14px;">Contact Us</h1>
+    <p style="max-width:500px; margin:0 auto; color:rgba(255,255,255,.78);">Reservations, private events, media, partnerships, or just say hello — we're here for it.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Left: Info + channels -->
+      <div class="reveal">
+        <div class="label" style="margin-bottom:16px;">Reach Us Directly</div>
+        <div class="contact-channels">
+          
+          <a href="tel:+14045550180" class="contact-channel">
+            <div class="contact-channel-icon gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.17 9.1a19.79 19.79 0 01-3-8.56A2 2 0 012.1 2.5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.71a16 16 0 006.29 6.29l1.58-1.58a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="contact-channel-text">
+              <strong>+1 (404) 555-0180</strong>
+              <span>Call us during business hours</span>
+            </div>
+          </a>
+          <a href="mailto:info@rocksteadyatl.com" class="contact-channel">
+            <div class="contact-channel-icon blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-channel-text">
+              <strong>info@rocksteadyatl.com</strong>
+              <span>For media, partnerships &amp; general enquiries</span>
+            </div>
+          </a>
+          <div class="contact-channel" style="cursor:default;">
+            <div class="contact-channel-icon gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-channel-text">
+              <strong>1234 Peachtree St NE, Atlanta, GA 30309</strong>
+              <span>Midtown Atlanta · Parking available</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div style="background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; margin-bottom:24px;">
+          <div class="label" style="margin-bottom:14px;">Hours of Operation</div>
+          <div class="footer-hours">
+            <div class="footer-hour-row"><span>Monday – Tuesday</span><span>Closed</span></div>
+            <div class="footer-hour-row"><span>Wednesday – Thursday</span><span>5 PM – 12 AM</span></div>
+            <div class="footer-hour-row tonight"><span>Friday</span><span>5 PM – 3 AM</span></div>
+            <div class="footer-hour-row tonight"><span>Saturday</span><span>5 PM – 3 AM</span></div>
+            <div class="footer-hour-row"><span>Sunday</span><span>4 PM – 1 AM</span></div>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>1234 Peachtree St NE · Atlanta, GA 30309</span>
+          <a href="https://maps.google.com/?q=1234+Peachtree+St+NE+Atlanta+GA" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="margin-top:8px;">Open in Google Maps</a>
+        </div>
+
+        <!-- Google Review CTA -->
+        <div style="background:var(--panel); border:1px solid rgba(212,175,55,.2); border-radius:var(--radius-lg); padding:24px; margin-top:16px; text-align:center;">
+          <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            <span style="font-size:.9rem; color:var(--ink); font-weight:600;">4.9 ★★★★★ on Google · 847 reviews</span>
+          </div>
+          <p style="font-size:.8rem; color:var(--muted); margin-bottom:16px; line-height:1.6;">Visited Rock Steady recently? Your review helps us grow and helps others discover the culture.</p>
+          <a href="https://g.page/r/rocksteadyatl/review" target="_blank" rel="noopener" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; text-align:center;">Leave a Google Review</a>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="reveal reveal-delay-2">
+        <div class="reservation-card" style="max-width:100%;">
+          <h3 style="font-size:1.4rem; margin-bottom:6px; font-family:'Cormorant Garamond',Georgia,serif;">Send Us a Message</h3>
+          <p style="color:var(--muted); font-size:.875rem; margin-bottom:24px;">We respond to all messages within 24 hours.</p>
+
+          <form id="contact-form" style="display:flex; flex-direction:column; gap:16px;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Name *</label>
+                <input type="text" name="name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" name="phone" class="form-input" placeholder="+1 (404) 000-0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email *</label>
+              <input type="email" name="email" class="form-input" placeholder="you@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject *</label>
+              <select name="subject" class="form-select" required>
+                <option value="">What's this about?</option>
+                <option>Table Reservation</option>
+                <option>Private Event Enquiry</option>
+                <option>Birthday Package</option>
+                <option>Corporate Booking</option>
+                <option>VIP Membership</option>
+                <option>Media / Press Enquiry</option>
+                <option>DJ / Artist Booking</option>
+                <option>Partnership Enquiry</option>
+                <option>General Question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea name="message" class="form-textarea" placeholder="Tell us more…" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-lg" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Hub -->
+<section class="section-sm" style="background: var(--deep); border-top: 1px solid var(--line);">
+  <div class="container">
+    <div style="text-align:center; max-width: 680px; margin: 0 auto;" class="reveal">
+      <div class="overline" style="justify-content:center;">Follow the Vibe</div>
+      <h3 style="font-size:1.9rem; margin:12px 0 10px; font-family:'Cormorant Garamond',Georgia,serif;">Connect With Us</h3>
+      <p style="color:var(--muted); font-size:.88rem; margin-bottom:8px;">Stay plugged in — behind-the-scenes, upcoming events, DJ sets, and more across all platforms.</p>
+      <div class="social-hub">
+        <a href="https://www.instagram.com/rocksteadyatlanta" target="_blank" rel="noopener" class="social-card">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <span class="social-card-name">Instagram</span>
+          <span class="social-card-handle">@rocksteadyatlanta</span>
+        </a>
+        <a href="https://www.facebook.com/RockSteadyAtl" target="_blank" rel="noopener" class="social-card">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </div>
+          <span class="social-card-name">Facebook</span>
+          <span class="social-card-handle">RockSteadyAtl</span>
+        </a>
+        <a href="https://www.youtube.com/@rocksteadyatlanta" target="_blank" rel="noopener" class="social-card">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.54 3.54 12 3.54 12 3.54s-7.54 0-9.38.51A3.02 3.02 0 00.5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 002.12 2.14C4.46 20.46 12 20.46 12 20.46s7.54 0 9.38-.51a3.02 3.02 0 002.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.54 15.57V8.43L15.82 12l-6.28 3.57z"/></svg>
+          </div>
+          <span class="social-card-name">YouTube</span>
+          <span class="social-card-handle">@rocksteadyatlanta</span>
+        </a>
+        <a href="https://www.tiktok.com/@rocksteadyatlanta" target="_blank" rel="noopener" class="social-card">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.98a8.26 8.26 0 004.84 1.55V7.07a4.85 4.85 0 01-1.07-.38z"/></svg>
+          </div>
+          <span class="social-card-name">TikTok</span>
+          <span class="social-card-handle">@rocksteadyatlanta</span>
+        </a>
+        <a href="https://x.com/rocksteadyatl" target="_blank" rel="noopener" class="social-card">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <span class="social-card-name">X / Twitter</span>
+          <span class="social-card-handle">@rocksteadyatl</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-social-mini">
+      <a href="https://www.instagram.com/rocksteadyatlanta" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/RockSteadyAtl" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@rocksteadyatlanta" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.54 3.54 12 3.54 12 3.54s-7.54 0-9.38.51A3.02 3.02 0 00.5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 002.12 2.14C4.46 20.46 12 20.46 12 20.46s7.54 0 9.38-.51a3.02 3.02 0 002.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.54 15.57V8.43L15.82 12l-6.28 3.57z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@rocksteadyatlanta" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.98a8.26 8.26 0 004.84 1.55V7.07a4.85 4.85 0 01-1.07-.38z"/></svg>
+      </a>
+      <a href="https://x.com/rocksteadyatl" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <p>© 2026 Rock Steady ATL · <a href="../index.html" style="color:var(--gold);">Back to Home</a> · <a href="https://umojaserv.com/" target="_blank" rel="noopener" style="color:var(--soft);">Site by UmojaServ</a></p>
+      <div class="footer-bottom-links">
+        <a href="reservations.html">Reservations</a>
+        <a href="vip.html">VIP Membership</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-ctas">
+  <a href="reservations.html" class="float-cta float-cta-reserve">Book<br>Table</a>
+</div>
+
+<div class="toast-container"></div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

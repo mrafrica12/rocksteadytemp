@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve a Table — Rock Steady ATL | Atlanta Afro-Caribbean Restaurant</title>
+  <meta name="description" content="Reserve your table at Rock Steady ATL. Book online, request VIP tables, or call us for birthday packages and group bookings.">
+  <meta name="theme-color" content="#040302">
+  <meta name="google-apps-script-endpoint" content="">
+  <link rel="icon" href="../assets/images/logo/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .res-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: flex-start;
+    }
+    .res-info { display: flex; flex-direction: column; gap: 32px; }
+    .info-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+    .info-card h4 {
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-card h4 svg { width: 18px; height: 18px; color: var(--gold); }
+    .info-card p, .info-card ul { font-size: .875rem; color: var(--muted); line-height: 1.7; }
+    .info-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; padding: 0; }
+    .info-card ul li::before { content: "✦ "; color: var(--gold); font-size: .65rem; }
+    .quick-book-options { display: flex; flex-direction: column; gap: 10px; }
+    .quick-book-option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--charcoal);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all var(--dur-fast) var(--ease);
+    }
+    .quick-book-option:hover { border-color: rgba(200,150,42,.35); background: var(--panel); }
+    .quick-book-option-icon {
+      width: 40px; height: 40px; border-radius: var(--radius); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .quick-book-option-icon.gold { background: var(--gold-dim); }
+    .quick-book-option-icon.green { background: rgba(37,211,102,.12); }
+    .quick-book-option-icon svg { width: 18px; height: 18px; }
+    .quick-book-option-text { flex: 1; }
+    .quick-book-option-text strong { display: block; font-size: .88rem; color: var(--ink); margin-bottom: 2px; }
+    .quick-book-option-text span { font-size: .78rem; color: var(--soft); }
+    .quick-book-option svg.arrow { width: 14px; height: 14px; color: var(--soft); flex-shrink: 0; }
+    @media (max-width: 900px) {
+      .res-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- SEO: Open Graph -->
+  <meta property="og:site_name" content="Rock Steady ATL">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Reserve a Table — Rock Steady ATL | Atlanta Afro-Caribbean Restaurant">
+  <meta property="og:description" content="Book your table at Rock Steady ATL — Atlanta's best Afro-Caribbean restaurant & nightclub. VIP tables, birthday packages & group bookings available online.">
+  <meta property="og:url" content="https://rocksteadyatl.com/pages/reservations.html">
+  <meta property="og:image" content="https://rocksteadyatl.com/assets/images/rocksteady_02.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- SEO: Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@rocksteadyatl">
+  <meta name="twitter:title" content="Reserve a Table — Rock Steady ATL | Atlanta Afro-Caribbean Restaurant">
+  <meta name="twitter:description" content="Book your table at Rock Steady ATL — Atlanta's best Afro-Caribbean restaurant & nightclub. VIP tables, birthday packages & group bookings available online.">
+  <meta name="twitter:image" content="https://rocksteadyatl.com/assets/images/rocksteady_02.webp">
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://rocksteadyatl.com/pages/reservations.html">
+  <!-- Schema.org: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rocksteadyatl.com/"},{"@type":"ListItem","position":2,"name":"Reservations","item":"https://rocksteadyatl.com/pages/reservations.html"}]}
+  </script>
+  <link rel="preload" as="image" href="../assets/images/rocksteady_02.webp">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="nav-brand">
+    <img src="../assets/images/logo/logo.png" width="1254" height="1254" alt="Rock Steady Logo" class="nav-logo">
+    <div class="nav-brand-name">Rock Steady<span>Atlanta</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="vip.html">VIP</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-cta"><a href="reservations.html" class="btn btn-gold btn-sm active">Reserve a Table</a></div>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="mobile-navigation" class="nav-mobile-overlay">
+  <a href="../index.html">Home</a><a href="events.html">Events</a><a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="vip.html">VIP</a>
+  <a href="contact.html">Contact</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="reservations.html" class="btn btn-gold">Reserve a Table</a>
+</div>
+
+<!-- Cinematic Hero -->
+<section class="immersive-divider" style="background-image: url('../assets/images/rocksteady_02.webp'); min-height: 380px;">
+  <div class="immersive-divider-content">
+    <div class="overline" style="justify-content:center;">Book Your Experience</div>
+    <h1 style="font-size: clamp(2.2rem,5vw,3.8rem); margin-bottom: 14px;">Reserve a Table</h1>
+    <p style="max-width: 520px; margin: 0 auto; color: rgba(255,255,255,.78);">Secure your spot at Rock Steady. Standard tables, VIP seating, birthday packages, and group bookings — all available below.</p>
+  </div>
+</section>
+
+<!-- Google Trust Strip -->
+<div style="background: var(--deep); border-bottom: 1px solid var(--line); padding: 16px 0;">
+  <div class="container">
+    <div class="trust-row" style="justify-content:center; gap:40px; flex-wrap:wrap;">
+      <div class="trust-item">
+        <span class="google-rating-badge" style="font-size:.75rem; padding:4px 10px;">
+          <svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          4.9 ★★★★★ · 847 reviews
+        </span>
+        <span class="trust-item-label">Rated #1 Afro-Caribbean in ATL</span>
+      </div>
+      <div class="trust-item">
+        <span style="color:var(--gold);">⚡</span>
+        <span class="trust-item-label">30-minute confirmation by phone or email</span>
+      </div>
+      <div class="trust-item">
+        <span style="color:var(--gold);">🎂</span>
+        <span class="trust-item-label">Birthday packages available</span>
+      </div>
+      <div class="trust-item">
+        <span style="color:var(--gold);">👑</span>
+        <span class="trust-item-label">VIP table upgrades on request</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="padding-top: 48px;">
+  <div class="container">
+    <div class="res-layout">
+
+      <!-- Reservation Form -->
+      <div class="reveal">
+        <div class="reservation-card" style="max-width: 100%;">
+          <h3 style="font-size:1.5rem; margin-bottom: 6px; font-family:'Cormorant Garamond',Georgia,serif;">Table Reservation</h3>
+          <p style="color:var(--muted); font-size:.875rem; margin-bottom: 28px;">Complete the form below and we'll confirm your booking within 30 minutes by phone or email.</p>
+
+          <form id="reservation-form" style="display:flex; flex-direction:column; gap:18px;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" class="form-input" placeholder="Marcus" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" class="form-input" placeholder="Thompson" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (404) 000-0000" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="you@email.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="date">Date *</label>
+                <input type="date" id="date" name="date" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="time">Preferred Time *</label>
+                <select id="time" name="time" class="form-select" required>
+                  <option value="">Select time</option>
+                  <option>5:00 PM</option>
+                  <option>6:00 PM</option>
+                  <option>7:00 PM</option>
+                  <option>8:00 PM</option>
+                  <option>9:00 PM</option>
+                  <option>10:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="guests">Number of Guests *</label>
+                <select id="guests" name="guests" class="form-select" required>
+                  <option value="">Select party size</option>
+                  <option>1–2 guests</option>
+                  <option>3–4 guests</option>
+                  <option>5–6 guests</option>
+                  <option>7–10 guests</option>
+                  <option>11–20 guests (Group)</option>
+                  <option>20+ guests (Private Event)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="table-type">Table Type</label>
+                <select id="table-type" name="table_type" class="form-select">
+                  <option value="">Standard</option>
+                  <option>VIP Table</option>
+                  <option>Bottle Service</option>
+                  <option>Birthday Package</option>
+                  <option>Private Event</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="event-select">Attending an Event?</label>
+              <select id="event-select" name="event" class="form-select">
+                <option value="">General visit / No specific event</option>
+                <option>Afrobeats Takeover (Fri Jun 6)</option>
+                <option>Riddim Sundays (Sun Jun 7)</option>
+                <option>Amapiano Friday (Fri Jun 13)</option>
+                <option>Rock Steady Birthday Bash (Sat Jun 20)</option>
+                <option>Hip-Hop &amp; R&amp;B Saturdays (Sat Jun 21)</option>
+                <option>Ladies Night (Thu Jun 26)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="special">Special Requests</label>
+              <textarea id="special" name="special_requests" class="form-textarea" placeholder="Birthday celebration, dietary requirements, accessibility needs, bottle preferences…" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg" style="width:100%; margin-top:4px;">Confirm Reservation</button>
+            <p class="form-hint" style="text-align:center;">We'll call or email you a confirmation within 30 minutes · No payment required to reserve</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Side Info -->
+      <div class="res-info reveal reveal-delay-2">
+
+        <!-- Quick Book Options -->
+        <div>
+          <div class="label" style="margin-bottom:14px;">Quick Book</div>
+          <div class="quick-book-options">
+            <a href="mailto:info@rocksteadyatl.com?subject=Table%20Reservation" class="quick-book-option">
+              <div class="quick-book-option-icon gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="quick-book-option-text">
+                <strong>Email Us</strong>
+                <span>info@rocksteadyatl.com</span>
+              </div>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+            <a href="tel:+14045550180" class="quick-book-option">
+              <div class="quick-book-option-icon gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.17 9.1a19.79 19.79 0 01-3-8.56A2 2 0 012.1 2.5h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.71a16 16 0 006.29 6.29l1.58-1.58a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div class="quick-book-option-text">
+                <strong>Call Directly</strong>
+                <span>+1 (404) 555-0180</span>
+              </div>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="info-card">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Opening Hours
+          </h4>
+          <div class="footer-hours">
+            <div class="footer-hour-row"><span>Monday – Tuesday</span><span>Closed</span></div>
+            <div class="footer-hour-row"><span>Wednesday – Thursday</span><span>5 PM – 12 AM</span></div>
+            <div class="footer-hour-row tonight"><span>Friday</span><span>5 PM – 3 AM</span></div>
+            <div class="footer-hour-row tonight"><span>Saturday</span><span>5 PM – 3 AM</span></div>
+            <div class="footer-hour-row"><span>Sunday</span><span>4 PM – 1 AM</span></div>
+          </div>
+        </div>
+
+        <!-- Policy -->
+        <div class="info-card">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            Reservation Policy
+          </h4>
+          <ul>
+            <li>Reservations held for 15 minutes past booking time</li>
+            <li>Dress code enforced on Fridays &amp; Saturdays</li>
+            <li>VIP tables require a minimum spend</li>
+            <li>Cancellations must be made 24 hours in advance</li>
+            <li>Groups of 10+ require a deposit</li>
+          </ul>
+        </div>
+
+        <!-- Birthday Packages -->
+        <div class="info-card" style="border-color: rgba(200,150,42,.25); background: linear-gradient(135deg, var(--panel-2), var(--panel));">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Birthday Packages
+          </h4>
+          <p style="margin-bottom: 12px;">Celebrate in style. Our birthday packages include reserved VIP seating, complimentary cake presentation, bottle service, and more.</p>
+          <a href="tel:+14045550180" class="btn btn-gold btn-sm" style="width:100%; text-align:center; justify-content:center;">Call About Birthdays</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-social-mini">
+      <a href="https://www.instagram.com/rocksteadyatlanta" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/RockSteadyAtl" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@rocksteadyatlanta" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.54 3.54 12 3.54 12 3.54s-7.54 0-9.38.51A3.02 3.02 0 00.5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 002.12 2.14C4.46 20.46 12 20.46 12 20.46s7.54 0 9.38-.51a3.02 3.02 0 002.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.54 15.57V8.43L15.82 12l-6.28 3.57z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@rocksteadyatlanta" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.98a8.26 8.26 0 004.84 1.55V7.07a4.85 4.85 0 01-1.07-.38z"/></svg>
+      </a>
+      <a href="https://x.com/rocksteadyatl" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <p>© 2026 Rock Steady ATL · <a href="../index.html" style="color:var(--gold);">Back to Home</a> · <a href="https://umojaserv.com/" target="_blank" rel="noopener" style="color:var(--soft);">Site by UmojaServ</a></p>
+      <div class="footer-bottom-links">
+        <a href="events.html">Events</a>
+        <a href="vip.html">VIP Membership</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-ctas">
+  <a href="reservations.html" class="float-cta float-cta-reserve">Book<br>Table</a>
+</div>
+
+<div class="toast-container"></div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
