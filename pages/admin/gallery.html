@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Rock Steady Admin</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="../../assets/images/logo/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <style>
+    .gallery-admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+    .gallery-admin-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .gallery-admin-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+    .gallery-admin-item img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-admin-item.hidden img { opacity: .35; filter: grayscale(1); }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(4,3,2,.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .gallery-admin-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-meta {
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .gallery-item-name { font-size: .75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; }
+    .gallery-item-badge { flex-shrink: 0; }
+    .upload-zone {
+      border: 2px dashed var(--line);
+      border-radius: 12px;
+      padding: 40px 20px;
+      text-align: center;
+      margin: 20px;
+      color: var(--muted);
+      transition: border-color .2s, background .2s;
+      cursor: pointer;
+    }
+    .upload-zone:hover { border-color: var(--gold); background: rgba(200,150,42,.05); }
+    .upload-zone svg { width: 36px; height: 36px; opacity: .4; margin-bottom: 12px; }
+    .upload-zone p { font-size: .82rem; margin: 4px 0; }
+    .upload-zone strong { color: var(--gold); }
+  </style>
+</head>
+<body>
+<div class="admin-shell">
+  <header class="admin-topbar">
+    <div class="admin-topbar-brand"><img src="../../assets/images/logo/logo.png" width="1254" height="1254" alt="">Rock Steady <span>Admin</span></div>
+    <div class="admin-topbar-actions"><div class="admin-avatar">RS</div></div>
+  </header>
+  <aside class="admin-sidebar">
+    <div class="sidebar-section"><div class="sidebar-section-label">Operations</div>
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a></li>
+        <li><a href="reservations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Reservations</a></li>
+        <li><a href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19V6l12-3v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Events</a></li>
+        <li><a href="members.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>VIP Members</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section"><div class="sidebar-section-label">Marketing</div>
+      <ul class="sidebar-nav">
+        <li><a href="crm.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Customer CRM</a></li>
+        <li><a href="campaigns.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Campaigns</a></li>
+        <li><a href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analytics</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section"><div class="sidebar-section-label">Content</div>
+      <ul class="sidebar-nav">
+        <li><a href="menu.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Menu</a></li>
+        <li><a href="gallery.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Gallery</a></li>
+        <li><a href="staff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>Staff &amp; Alerts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="../../index.html" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Website</a>
+      <a href="index.html" class="logout" data-logout><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign Out</a>
+    </div>
+  </aside>
+
+  <main class="admin-content">
+    <div class="admin-page-header">
+      <div class="admin-page-title"><h2>Gallery</h2><p>All images across every folder — live from GitHub. Push a file and it appears here.</p></div>
+      <div class="admin-page-actions">
+        <span id="last-synced" style="font-size:.75rem; color:var(--muted);"></span>
+        <button id="btn-refresh" class="btn btn-ghost btn-sm">↻ Refresh</button>
+        <button class="btn btn-gold btn-sm" data-modal-open="upload-modal">+ Add Photos</button>
+      </div>
+    </div>
+
+    <!-- Stats row — live values -->
+    <div class="kpi-grid" style="margin-bottom:20px; grid-template-columns: repeat(4, 1fr);">
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">Total Images</span></div><div class="kpi-value" id="gal-kpi-total">—</div><div class="kpi-trend up">Across all folders</div></div>
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">Events</span></div><div class="kpi-value" id="gal-kpi-events">—</div><div class="kpi-trend up">In events/</div></div>
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">Menu</span></div><div class="kpi-value" id="gal-kpi-menu">—</div><div class="kpi-trend up">In menu/</div></div>
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">Gallery</span></div><div class="kpi-value" id="gal-kpi-gallery">—</div><div class="kpi-trend up">In gallery/</div></div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="admin-table-card" style="margin-bottom:0; border-radius:10px 10px 0 0;">
+      <div class="admin-table-header" style="padding:14px 20px;">
+        <div class="admin-table-title">All Images</div>
+        <div class="admin-table-tools">
+          <select class="form-select" style="width:140px; padding:.45rem .75rem; font-size:.78rem;" id="gallery-filter" onchange="filterGallery(this.value)">
+            <option value="all">All Photos</option>
+            <option value="published">Published</option>
+            <option value="hidden">Hidden</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload zone -->
+    <div class="upload-zone" onclick="adminToast('info','Upload','File picker would open here.')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <p><strong>Drop photos here</strong> or click to browse</p>
+      <p style="font-size:.72rem;">Supports .webp, .jpg, .png — max 5 MB per file</p>
+    </div>
+
+    <!-- Gallery grid -->
+    <div class="admin-table-card" style="border-radius:0 0 10px 10px; border-top:none;">
+      <div class="gallery-admin-grid" id="gallery-admin-grid"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Upload Modal -->
+<div class="admin-modal-overlay" id="upload-modal">
+  <div class="admin-modal">
+    <div class="admin-modal-header">
+      <h4>Upload New Photos</h4>
+      <button class="admin-modal-close" data-modal-close="upload-modal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="admin-modal-body">
+      <div class="upload-zone" style="margin:0;" onclick="adminToast('info','Upload','File picker would open here.')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <p><strong>Drop photos here</strong> or click to browse</p>
+        <p style="font-size:.72rem;">Supports .webp, .jpg, .png — max 5 MB per file</p>
+      </div>
+      <div class="admin-grid-2" style="margin-top:16px;">
+        <div class="form-group"><label class="form-label">Caption (optional)</label><input type="text" class="form-input" placeholder="e.g. Friday night vibes"></div>
+        <div class="form-group"><label class="form-label">Tag</label>
+          <select class="form-select">
+            <option>Ambiance</option><option>Food</option><option>Events</option><option>VIP</option><option>Cocktails</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label style="display:flex; align-items:center; gap:8px; font-size:.82rem; color:var(--muted); cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--gold);"> Publish immediately to website</label>
+      </div>
+    </div>
+    <div class="admin-modal-footer">
+      <button class="btn btn-ghost btn-sm" data-modal-close="upload-modal">Cancel</button>
+      <button class="btn btn-gold btn-sm" onclick="adminToast('success','Uploaded','Photo added to gallery.'); closeModal('upload-modal');">Upload &amp; Publish</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Image Modal -->
+<div class="admin-modal-overlay" id="edit-image-modal">
+  <div class="admin-modal">
+    <div class="admin-modal-header">
+      <h4>Edit Image</h4>
+      <button class="admin-modal-close" data-modal-close="edit-image-modal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="admin-modal-body">
+      <img id="edit-image-preview" src="" alt="" style="width:100%; border-radius:8px; aspect-ratio:16/9; object-fit:cover; margin-bottom:16px;">
+      <div class="form-group"><label class="form-label">Caption</label><input type="text" class="form-input" id="edit-image-caption" placeholder="e.g. Friday night ambiance"></div>
+      <div class="admin-grid-2">
+        <div class="form-group"><label class="form-label">Tag</label>
+          <select class="form-select" id="edit-image-tag">
+            <option>Ambiance</option><option>Food</option><option>Events</option><option>VIP</option><option>Cocktails</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Visibility</label>
+          <select class="form-select" id="edit-image-visibility">
+            <option value="published">Published</option>
+            <option value="hidden">Hidden</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="admin-modal-footer">
+      <button class="btn btn-ghost btn-sm" style="color:#e05252;" onclick="adminToast('info','Deleted','Image removed from gallery.'); closeModal('edit-image-modal');">Delete</button>
+      <button class="btn btn-ghost btn-sm" data-modal-close="edit-image-modal">Cancel</button>
+      <button class="btn btn-gold btn-sm" onclick="adminToast('success','Saved','Image updated.'); closeModal('edit-image-modal');">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../assets/js/admin.js"></script>
+</body>
+</html>

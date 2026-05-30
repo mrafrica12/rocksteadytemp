@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM — Rock Steady Admin</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="../../assets/images/logo/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+</head>
+<body>
+<div class="admin-shell">
+  <header class="admin-topbar">
+    <div class="admin-topbar-brand"><img src="../../assets/images/logo/logo.png" width="1254" height="1254" alt="">Rock Steady <span>Admin</span></div>
+    <div class="admin-topbar-actions"><div class="admin-avatar">RS</div></div>
+  </header>
+  <aside class="admin-sidebar">
+    <div class="sidebar-section"><div class="sidebar-section-label">Operations</div>
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a></li>
+        <li><a href="reservations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Reservations</a></li>
+        <li><a href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19V6l12-3v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Events</a></li>
+        <li><a href="members.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>VIP Members</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section"><div class="sidebar-section-label">Marketing</div>
+      <ul class="sidebar-nav">
+        <li><a href="crm.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Customer CRM</a></li>
+        <li><a href="campaigns.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Campaigns</a></li>
+        <li><a href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analytics</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section"><div class="sidebar-section-label">Content</div>
+      <ul class="sidebar-nav">
+        <li><a href="menu.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Menu</a></li>
+        <li><a href="gallery.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Gallery</a></li>
+        <li><a href="staff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>Staff &amp; Alerts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="../../index.html" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Website</a>
+      <a href="index.html" class="logout" data-logout><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign Out</a>
+    </div>
+  </aside>
+
+  <main class="admin-content">
+    <div class="admin-page-header">
+      <div class="admin-page-title">
+        <h2>Customer CRM</h2>
+        <p>Full customer database — VIP leads, guests, and repeat visitors from live booking data.</p>
+        <div id="last-synced" style="font-size:.7rem; color:var(--soft); margin-top:2px;"></div>
+      </div>
+      <div class="admin-page-actions">
+        <span id="connection-status" class="admin-live-indicator cs-loading"><span class="cs-dot">⟳</span> Connecting…</span>
+        <button id="btn-refresh" class="btn btn-ghost btn-sm">Refresh Data</button>
+        <button class="btn btn-gold btn-sm" onclick="adminToast('info','Birthday campaign','Birthday emails queued for this month.')">Birthday Campaign</button>
+      </div>
+    </div>
+
+    <!-- KPIs — values filled by loadCRM() -->
+    <div class="kpi-grid" style="margin-bottom:20px;">
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">Unique Contacts</span></div><div class="kpi-value" id="crm-kpi-total">—</div><div class="kpi-trend up">From bookings</div></div>
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">Repeat Customers</span></div><div class="kpi-value" id="crm-kpi-repeat">—</div><div class="kpi-trend up">2+ bookings</div></div>
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">Birthday Requests</span></div><div class="kpi-value" id="crm-kpi-birthday">—</div><div class="kpi-trend up">Campaign ready</div></div>
+      <div class="kpi-card"><div class="kpi-header"><span class="kpi-label">VIP Leads</span></div><div class="kpi-value" id="crm-kpi-vip">—</div><div class="kpi-trend up">High value</div></div>
+    </div>
+
+    <div class="admin-table-card">
+      <div class="admin-table-header">
+        <div class="admin-table-title">Contact Database</div>
+        <div class="admin-table-tools">
+          <div class="admin-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Search name, email, phone…">
+          </div>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th style="text-align:center;">Bookings</th>
+              <th>Last Visit</th>
+              <th>Last Status</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody id="crm-tbody"></tbody>
+        </table>
+      </div>
+      <div class="admin-table-footer"><span>Grouped by phone · Repeat customers ranked first</span></div>
+    </div>
+  </main>
+</div>
+<script src="../../assets/js/admin.js"></script>
+</body>
+</html>
